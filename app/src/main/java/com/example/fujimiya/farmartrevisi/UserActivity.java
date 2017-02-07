@@ -119,6 +119,14 @@ public class UserActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_penawaran) {
 
+            ChatListFragment chatListFragment = new ChatListFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("nama",nama);
+            chatListFragment.setArguments(bundle);
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragmen_maps,chatListFragment);
+            fragmentTransaction.commit();
+
         } else if (id == R.id.nav_penjualan) {
             try {
                 ListPenjualanFragment listPenjualanFragment = new ListPenjualanFragment();
